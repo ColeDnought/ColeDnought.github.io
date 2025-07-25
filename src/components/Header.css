@@ -1,0 +1,11 @@
+.app-header {
+    background-image: linear-gradient(90deg, white, white),
+        linear-gradient(90deg, rgb(0, 0, 255), rgb(255, 0, 0));
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    border: 5px solid transparent;
+    border-radius: 1.75rem;
+    display: inline-flex;
+    border: 5px solid transparent;
+    padding: 0.5rem 2.5rem;
+}

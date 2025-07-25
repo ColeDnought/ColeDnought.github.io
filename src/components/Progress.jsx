@@ -1,3 +1,5 @@
+import './Progress.css';
+
 export default function Progress({ text, percentage }) {
     percentage = percentage ?? 0;
     return (

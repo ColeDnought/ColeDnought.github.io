@@ -1,3 +1,5 @@
+import './Token.css';
+
 const ProbToken = ({ probability, token, alternative }) => {
     const blue = Math.floor(255 * probability);
     const red = Math.floor(255 * (1 - probability));

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import Progress from './components/Progress'
 import ProbToken from './components/Token'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -93,33 +95,32 @@ function App() {
 	}
 
 	return (
-		<>
-			<h2>Distil-GPT scoring</h2>
-		
-			<div className='container'>
-				<textarea value={input} rows={3} onChange={e => setInput(e.target.value)}></textarea>
-				{outputTokens.length > 0 && (
-					<div className='output'>
-						{outputTokens.map((item, idx) => (
-							<ProbToken key={idx} token={item.token} probability={item.probability} alternative={item.best} />
-						))}
-					</div>
-				)}
-      </div>
-
-			<button disabled={disabled} onClick={score}>Score</button>
-		
-			<div className='progress-bars-container'>
-			{ready === false && (
-				<label>Loading model...</label>
-			)}
-			{progressItems.map(data => (
-				<div key={data.file}>
-				<Progress text={data.file} percentage={data.progress} />
+	<>
+		<Header />
+		<div className='container'>
+			<textarea value={input} rows={3} onChange={e => setInput(e.target.value)}></textarea>
+			{outputTokens.length > 0 && (
+				<div className='output'>
+					{outputTokens.map((item, idx) => (
+						<ProbToken key={idx} token={item.token} probability={item.probability} alternative={item.best} />
+					))}
 				</div>
-			))}
+			)}
+		</div>
+
+		<button disabled={disabled} onClick={score}>Score</button>
+	
+		<div className='progress-bars-container'>
+		{ready === false && (
+			<label>Loading model...</label>
+		)}
+		{progressItems.map(data => (
+			<div key={data.file}>
+			<Progress text={data.file} percentage={data.progress} />
 			</div>
-		</>
+		))}
+		</div>
+	</>
 	)
 }
 
