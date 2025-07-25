@@ -1,0 +1,118 @@
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-header {
+  height: 15vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.progress-container {
+  position: relative;
+  font-size: 14px;
+  color: white;
+  background-color: #e9ecef;
+  border: solid 1px;
+  border-radius: 8px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.progress-bar {
+  padding: 0 4px;
+  z-index: 0;
+  top: 0;
+  width: 1%;
+  overflow: hidden;
+  background-color: #007bff;
+  white-space: nowrap;
+}
+
+.progress-text {
+  z-index: 2;
+}
+
+.progress-bars-container {
+  padding: 8px;
+  height: 140px;
+}
+
+.container {
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+textarea {
+  padding: 12px;
+  border-radius: 8px;
+  width: 75vw;
+  height: 30vh;
+}
+
+.output {
+  border: solid 1px black;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Tooltip styles for ProbToken component */
+.prob-token {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.prob-token .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-bottom: 6px;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif
+}
+
+.prob-token:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
