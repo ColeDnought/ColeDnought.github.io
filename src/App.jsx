@@ -2,23 +2,24 @@ import { useEffect, useRef, useState } from 'react'
 import Progress from './components/Progress'
 import ProbToken from './components/Token'
 import Header from './components/Header'
-import Footer from './components/Footer'
+import ColorScale from './components/ColorScale'
 import './App.css'
 
 function App() {
-  	// Model loading
-  	const [ready, setReady] = useState(null);
-  	const [disabled, setDisabled] = useState(false);
-  	const [progressItems, setProgressItems] = useState([]);
+	// Model loading
+	const [ready, setReady] = useState(null);
+	const [disabled, setDisabled] = useState(false);
+	const [progressItems, setProgressItems] = useState([]);
+	const [modelLoading, setModelLoading] = useState(false);
 
-  	// Inputs and outputs
-  	const [input, setInput] = useState('It was the best of times, it was the worst of times.');
-  	const [outputTokens, setOutputTokens] = useState([]);
+	// Inputs and outputs
+	const [input, setInput] = useState('It was the best of times, it was the worst of times.');
+	const [outputTokens, setOutputTokens] = useState([]);
   
-  	// Create a reference to the worker object.
-  	const worker = useRef(null);
+	// Create a reference to the worker object.
+	const worker = useRef(null);
 
-  	// We use the `useEffect` hook to setup the worker as soon as the `App` component is mounted.
+	// We use the `useEffect` hook to setup the worker as soon as the `App` component is mounted.
 	useEffect(() => {
 		if (!worker.current) {
 		// Create the worker if it does not yet exist.
@@ -34,6 +35,7 @@ function App() {
 				// Model file start load: add a new progress item to the list.
 				setReady(false);
 				setProgressItems(prev => [...prev, e.data]);
+				setModelLoading(true);
 				break;
 			
 				case 'progress':
@@ -53,6 +55,7 @@ function App() {
 				setProgressItems(
 					prev => prev.filter(item => item.file !== e.data.file)
 				);
+				setModelLoading(false);
 				break;
 			
 				case 'ready':
@@ -64,6 +67,7 @@ function App() {
 				// Generation update: update the output text.
 				// Append new token with probability
 				setOutputTokens(prev => [...prev, { token: e.data.token, probability: e.data.prob_sum, best: e.data.best }]);
+
 				break;
 			
 				case 'complete':
@@ -108,18 +112,20 @@ function App() {
 			)}
 		</div>
 
-		<button disabled={disabled} onClick={score}>Score</button>
+	  <button disabled={disabled || modelLoading} onClick={score}>
+		{modelLoading ? 'Loading model' : 'Score'}
+	  </button>
 	
-		<div className='progress-bars-container'>
-		{ready === false && (
-			<label>Loading model...</label>
-		)}
-		{progressItems.map(data => (
-			<div key={data.file}>
-			<Progress text={data.file} percentage={data.progress} />
+		{modelLoading && (
+			<div className='progress-bars-container'>
+				{progressItems.map(data => (
+					<div key={data.file}>
+						<Progress text={data.file} percentage={data.progress} />
+					</div>
+				))}
 			</div>
-		))}
-		</div>
+		)}
+		{ready && <ColorScale />}
 	</>
 	)
 }

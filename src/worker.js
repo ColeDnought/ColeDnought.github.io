@@ -57,7 +57,7 @@ self.addEventListener('message', async (event) => {
         const most_likely_ind = generated.logits[0][i].indexOf(max_val)
         const most_likely_token = tokenizer.decode([most_likely_ind])
 
-        console.log(`Token: ${token}, Probability: ${token_prob}, Lower PDF: ${lower_pdf}, Most Likely Token: ${most_likely_token}`);
+        console.log(`Token: ${token}, Probability: ${token_prob}, Lower PDF: ${lower_pdf}, Most Likely Token: ${most_likely_token}, ${most_likely_ind}`);
 
         self.postMessage({
             status: 'update',
