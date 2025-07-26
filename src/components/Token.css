@@ -25,6 +25,10 @@
     sans-serif
 }
 
+.prob-token:hover {
+  text-decoration: underline;  
+}
+
 .prob-token:hover .tooltip-text {
   visibility: visible;
   opacity: 1;

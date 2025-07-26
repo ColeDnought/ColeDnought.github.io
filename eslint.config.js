@@ -11,7 +11,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'react/prop-types': 'off',
+    'react/prop-types': 'off'
   },
   overrides: [
     {
@@ -20,5 +20,5 @@ module.exports = {
         "no-restricted-globals": "off",
       },
     },
-  ],
+  ]
 }

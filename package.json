@@ -1,12 +1,14 @@
 {
-  "name": "test",
+  "name": "logitlens",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@huggingface/transformers": "3.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^7.7.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.19"
   },
   "scripts": {
     "start": "react-scripts start",

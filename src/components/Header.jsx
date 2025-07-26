@@ -1,17 +1,17 @@
 import './Header.css';
+import NamePlate from './NamePlate';
+import { Link } from "react-router";
 
 const Header = () => {
   return (
     <div className="app-header">
-      <a className="header-link" href="/about">About</a>
+      <Link to="/about" className="header-link">About</Link>
       <div className="title-container">
         <h1>
-          <span style={{ "color": "rgb(100, 0, 255)" }}>Log</span>
-          <span style={{ "color": "rgb(255, 0, 0)" }}>i</span>
-          <span style={{ "color": "rgb(100, 0, 255)" }}>t Lens</span>
+          <NamePlate />
         </h1>
       </div>
-      <a className="header-link" href="/faq">What's happening here?</a>
+      <Link to="/faq" className="header-link">What's happening here?</Link>
     </div>
   );
 };
