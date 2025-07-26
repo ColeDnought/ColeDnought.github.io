@@ -1,10 +1,12 @@
 import NamePlate from "../components/NamePlate";
 import Token from "../components/Token";
+import { Link } from "react-router";
 import './FAQ.css'
 
 const FAQ = () => {
   return (
     <div className="faq">
+        <Link to="/" className="back-arrow">&larr;</Link>
         <h2>You may have some questions, like:</h2>
         <div className="questions">
             <a href="#1"><span>What is <NamePlate />?</span></a>
