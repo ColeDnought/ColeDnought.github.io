@@ -30,6 +30,11 @@ body {
   gap: 10px;
 }
 
+.input-section {
+  position: relative;
+  width: 75vw;
+}
+
 textarea {
   padding: 12px;
   margin-top: 10vh;
@@ -46,7 +51,7 @@ textarea {
 .output {
   margin-top: 5vh;
   background-color: #ffffff;
-  border: 1px solid #000000;
+  border: 2px solid black;
   border-radius: 8px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   padding: 12px;

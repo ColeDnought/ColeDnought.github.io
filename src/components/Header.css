@@ -7,20 +7,16 @@
 
 
 .title-container {
-    background-image: linear-gradient(90deg, white, white),
-        linear-gradient(90deg, rgb(0, 0, 255), rgb(255, 0, 0));
-    background-clip: padding-box, border-box;
-    background-origin: border-box;
-    border: 5px solid transparent;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(90deg, rgb(0, 0, 255), rgb(255, 0, 0)) 1;
     border-radius: 1.75rem;
     display: inline-flex;
     align-items: center;
-    border: 5px solid transparent;
     padding: 0.5rem 2.5rem;
     height: 9vh;
 }
  
-/* FAQ link positioned top-right in header */
 .header-link {
     width: 10vw;
     font-size: 0.9rem;

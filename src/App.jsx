@@ -3,6 +3,7 @@ import Progress from './components/Progress'
 import ProbToken from './components/Token'
 import Header from './components/Header'
 import ColorScale from './components/ColorScale'
+import ExamplePicker from './components/ExamplePicker'
 import './App.css'
 
 function App() {
@@ -98,11 +99,30 @@ function App() {
 		});
 	}
 
+	const handleExampleSelect = (exampleText) => {
+		setInput(exampleText);
+	}
+
+	// Check if input text would overlap with example picker
+	const shouldHideExamplePicker = () => {
+		// Hide if user has typed anything different from the default examples
+		const defaultExample1 = 'It was the best of times, it was the worst of times.';
+		const defaultExample2 = 'It was the best of times, it was the BLURST of times?!';
+		
+		return input !== defaultExample1 && input !== defaultExample2 && input.length > 0;
+	}
+
 	return (
 	<>
 		<Header />
 		<div className='container'>
-			<textarea value={input} rows={3} onChange={e => setInput(e.target.value)}></textarea>
+			<div className='input-section'>
+				<textarea value={input} rows={3} onChange={e => setInput(e.target.value)}></textarea>
+				<ExamplePicker 
+					onExampleSelect={handleExampleSelect} 
+					isVisible={!shouldHideExamplePicker()}
+				/>
+			</div>
 			{outputTokens.length > 0 && (
 				<div className='output'>
 					{outputTokens.map((item, idx) => (

@@ -22,14 +22,14 @@ const FAQ = () => {
             <p><i>How do they work?</i></p>
             <p>The short answer is that a Language Model finds the probability of the next word, given the words that are already there.
                 On the surface, this is mechanically like the autocomplete that your phone keyboard does. 
-                Of course, there's a lot more going on behind the scenes</p>
+                Of course, there's a lot more going on behind the scenes.</p>
             <p>For each word, a LLM provides a probability distribution over it's entire vocabulary. 
                 The words that a model thinks are most likely to come next are assigned higher probabilities.
                 To pick the next word, a model will sample the probability distribution and then add it to the end of the sequence.
-                Then the process repeats until the model thinks its time to stop</p>
+                Then the process repeats until the model thinks its time to stop.</p>
             
             <p><NamePlate /> is a tool to explore those probabilites.
-            For a sequence of words, you can see which ones the model thinks are likely, and which ones surprise it</p>
+            For a sequence of words, you can see which ones the model thinks are likely to come next, and which ones surprise it.</p>
         </div>
 
         <div id="2" className="question">
@@ -51,10 +51,10 @@ const FAQ = () => {
             <p>This is why the <NamePlate /> takes a moment to load at the beginning, we're downloading the entire model!</p>
             <p>Once we've distilled a model, we have to use it. To do this, <NamePlate /> leverages 
             the <a href="https://huggingface.co/docs/transformers.js/index">Transformers.js library</a> and <a href="https://onnxruntime.ai/docs/">Open Neural Network Exchange (ONNX) Runtime</a>
-            These open-source libraries allow our model to run in your browser without any setup.</p>
+            &nbsp;These open-source libraries allow our model to run in your browser without any setup.</p>
 
             <p>If you would like to see more technical details or contribute to this project, I 
-                encourage you to check out the <a href="">codebase</a>
+                encourage you to check out the <a href="">codebase</a>.
             </p>
         </div>
     </div>
