@@ -1,7 +1,20 @@
-.faq {
+.page {
     justify-content: center;
     padding: 20px;
     padding-top: 0px;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.columnView {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-section {
+    flex-shrink: 0;
 }
 
 .questions {
@@ -26,10 +39,23 @@ a:hover {
     display: inline-block;
 }
 
-.question {
+.detailfield {
     border: 1px solid black;
     margin-top: 20px;
     border-radius: 8px;
     padding: 12px 20px ;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+    margin-right: 3vw;
+}
+
+ol {
+    display: inline-block;
+}
+
+ol li {
+    margin-bottom: 5px;
+    padding-left: 10px;
 }
