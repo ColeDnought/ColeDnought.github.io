@@ -26,10 +26,11 @@
 }
 
 .prob-token:hover {
-  text-decoration: underline;  
+  font-weight: bold;
 }
 
 .prob-token:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
+  font-weight: normal;
 }

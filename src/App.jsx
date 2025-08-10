@@ -14,7 +14,8 @@ function App() {
 	const [modelLoading, setModelLoading] = useState(false);
 
 	// Inputs and outputs
-	const [input, setInput] = useState('It was the best of times, it was the worst of times.');
+	const startPrompt = 'Type a sentence here, and press "score" to see how likely each word is, according to GPT.';
+	const [input, setInput] = useState(startPrompt);
 	const [outputTokens, setOutputTokens] = useState([]);
   
 	// Create a reference to the worker object.
@@ -109,7 +110,10 @@ function App() {
 		const defaultExample1 = 'It was the best of times, it was the worst of times.';
 		const defaultExample2 = 'It was the best of times, it was the BLURST of times?!';
 		
-		return input !== defaultExample1 && input !== defaultExample2 && input.length > 0;
+		return input !== defaultExample1 && 
+			input !== defaultExample2 && 
+			input !== startPrompt &&
+			input.length > 0;
 	}
 
 	return (

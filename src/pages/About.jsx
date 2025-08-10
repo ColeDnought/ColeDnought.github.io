@@ -1,15 +1,25 @@
+import React, { useEffect } from 'react';
+import { Link } from "react-router";
 import './Page.css';
 
 const About = () => {
+  // Load LinkedIn badge script to render badge
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="page">
+      <Link to="/" className="back-arrow">&larr;</Link>
       <h2>About the Author</h2>
       <div className='columnView'>
         <div className='about-content detailfield'>
-          <p>
-            I'm a graduate student at Cornell University, interested in Machine Learning for Accessibility.
-            This is a personal project to show how Language Models can be:
-          </p>
+          <p>I'm a graduate student at Cornell University, interested in Machine Learning for Accessibility.</p>
+          <p>This is a personal project to show how Language Models can be:</p>
           <ol>
             <li>Used beyond generating text</li>
             <li>Deployed on personal devices</li>
