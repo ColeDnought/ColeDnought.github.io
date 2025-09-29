@@ -30,7 +30,7 @@ self.addEventListener('message', async (event) => {
         token: tokenizer.decode([tokens.input_ids[0].ort_tensor.cpuData[0]]),
         prob: 1 / tokenizer.vocab_size,
         prob_sum: 0.5,
-        best: '<start>' // Calculated from starting weights
+        best: ' ' // Calculated from starting weights
     });
 
     // Cross-reference logits with the tokenizer vocabulary
@@ -57,7 +57,7 @@ self.addEventListener('message', async (event) => {
         const most_likely_ind = generated.logits[0][i].indexOf(max_val)
         const most_likely_token = tokenizer.decode([most_likely_ind])
 
-        console.log(`Token: ${token}, Probability: ${token_prob}, Lower PDF: ${lower_pdf}, Most Likely Token: ${most_likely_token}, ${most_likely_ind}`);
+        // console.log(`Token: ${token}, Probability: ${token_prob}, Lower PDF: ${lower_pdf}, Most Likely Token: ${most_likely_token}, ${most_likely_ind}`);
 
         self.postMessage({
             status: 'update',

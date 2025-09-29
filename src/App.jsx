@@ -65,12 +65,10 @@ function App() {
 				setReady(true);
 				break;
 			
-				case 'update':
-				// Generation update: update the output text.
-				// Append new token with probability
-				setOutputTokens(prev => [...prev, { token: e.data.token, probability: e.data.prob_sum, best: e.data.best }]);
-
-				break;
+                case 'update':
+                // Generation update: update the output text.
+                // Append new token with probability
+                setOutputTokens(prev => [...prev, { token: e.data.token, probability: e.data.prob_sum, best: e.data.best, prob: e.data.prob }]);				break;
 			
 				case 'complete':
 				// Generation complete: re-enable the "Translate" button

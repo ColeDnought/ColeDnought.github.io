@@ -35,9 +35,16 @@ const FAQ = () => {
         <div id="2" className="detailfield">
             <h3>How do I use <NamePlate />?</h3>
             <p>To use <NamePlate />, simply type a sequence of words into the input box. 
-            After giving the model a moment to load, it will display your input with color-coded probabilities: red for low probability words, and blue for high probability ones.
-            If you hover over a word, you can see the word the model thinks is most likely for that position. Give it a try:</p>
+            After giving the model a moment to load, it will display your input with color-coded probabilities: red for low probability words, and blue for high probability ones.</p>
+            <p>If you hover over a word, you can see the word the model thinks is most likely for that position. While hovering, hold <code>Shift</code> to see the probability number as well.</p>
+            <p>Give it a try:</p>
             <p className="output"><Token token="Try" probability={1.0} alternative="Try" /> <Token token="me" probability={0.3} alternative="it" /></p>
+            <p>
+                <h4>A brief note on probabilities:</h4>
+                The displayed probabilities are not the raw probabilities from the model. 
+                They are instead the <a href="https://en.wikipedia.org/wiki/Probability_density_function">probability densities</a> derived from the model's output.
+                The raw probabilities are often very small numbers, so the probability density is there to make it more human-readable.
+            </p>
         </div>
         <div id="3" className="detailfield">
             <h3>How does this all work?</h3>
