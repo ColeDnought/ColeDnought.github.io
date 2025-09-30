@@ -61,7 +61,7 @@ const FAQ = () => {
             &nbsp;These open-source libraries allow our model to run in your browser without any setup.</p>
 
             <p>If you would like to see more technical details or contribute to this project, I 
-                encourage you to check out the <a href="">codebase</a>.
+                encourage you to check out the <a href="https://github.com/ColeDnought/logitlens">codebase</a>.
             </p>
         </div>
     </div>
