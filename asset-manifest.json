@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/logitlens/static/css/main.08801dc2.css",
-    "main.js": "/logitlens/static/js/main.f7da58f9.js",
+    "main.js": "/logitlens/static/js/main.94a5f856.js",
     "static/js/512.0df12502.chunk.js": "/logitlens/static/js/512.0df12502.chunk.js",
     "static/js/582.be6a602e.chunk.js": "/logitlens/static/js/582.be6a602e.chunk.js",
     "static/media/ort-wasm-simd-threaded.jsep.wasm": "/logitlens/static/media/ort-wasm-simd-threaded.jsep.666d0398a1e13e9c0c1d.wasm",
     "static/media/ort.bundle.min.mjs": "/logitlens/static/media/ort.bundle.min.b82257a13e9c69b78bd7.mjs",
     "index.html": "/logitlens/index.html",
     "main.08801dc2.css.map": "/logitlens/static/css/main.08801dc2.css.map",
-    "main.f7da58f9.js.map": "/logitlens/static/js/main.f7da58f9.js.map",
+    "main.94a5f856.js.map": "/logitlens/static/js/main.94a5f856.js.map",
     "512.0df12502.chunk.js.map": "/logitlens/static/js/512.0df12502.chunk.js.map",
     "582.be6a602e.chunk.js.map": "/logitlens/static/js/582.be6a602e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08801dc2.css",
-    "static/js/main.f7da58f9.js"
+    "static/js/main.94a5f856.js"
   ]
 }
