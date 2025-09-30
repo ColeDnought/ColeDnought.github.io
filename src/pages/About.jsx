@@ -26,7 +26,7 @@ const About = () => {
             <li>Explored and understood interactively</li>
           </ol>
           <p>
-            If you would like to see more technical details or contribute to this project, I encourage you to check out the <a href="https://github.com/ColeDnought/logitlens">GitHub repository</a>.
+            If you would like to see more technical details or contribute to this project, I encourage you to check out the <a href="https://github.com/ColeDnought/logitlens.git">GitHub repository</a>.
             Or feel free to follow me on <a href="https://www.linkedin.com/in/cole-donat/">LinkedIn</a> to see what I'm up to next!
           </p>
         </div>
